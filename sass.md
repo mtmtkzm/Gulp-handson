@@ -122,40 +122,48 @@ $theme: 1;
 
 
 - 便利な関数が用意されている
+
 1. 16進数の色指定に対して透明度を指定できる
-	```sass
-	p {
-		color: rgba(#666666, 0.5);
-	}
-	```
+
+```sass
+p {
+	color: rgba(#666666, 0.5);
+}
+```
+
 2. 中間色をつくれる
-	```sass
-	div {
-		background-color: mix(#fff, red, 50%);
-	}
-	```
+
+```sass
+div {
+	background-color: mix(#fff, red, 50%);
+}
+```
+
 3. ちょっと明るく、ちょっと暗く
-	```sass
-	p {
-		color: darken(#fff, 30%);
-	}
-	p {
-		color: lighten(blue, 30%);
-	}
-	```
+
+```sass
+p {
+	color: darken(#fff, 30%);
+}
+p {
+	color: lighten(blue, 30%);
+}
+```
+
 4. 四捨五入、切り上げ、切り捨て
-	```sass
-	$width: 100px;
-	.box {
-		width: $width / 6;
-	}
-	.box-round {
-		width: round($width / 6);
-	}
-	.box-ceil {
-		width: ceil($width / 6);
-	}
-	.box-floor {
-		width: floor($width / 6);
-	}
-	```
+
+```sass
+$width: 100px;
+.box {
+	width: $width / 6;
+}
+.box-round {
+	width: round($width / 6);
+}
+.box-ceil {
+	width: ceil($width / 6);
+}
+.box-floor {
+	width: floor($width / 6);
+}
+```
