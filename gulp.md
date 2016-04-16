@@ -43,8 +43,7 @@ npm init
 ```js
 var gulp = require('gulp');
 ```
-とだけ記述しておきましょう。これはGulpを使うよ！っていう宣言。  
-たぶん、中身はさっきインストールしたやつです。
+とだけ記述しておきましょう。これはGulpを使うよ！っていう宣言。
 
 ## 実際にsassのGulpでコンパイルしてみる
 ### gulp-sassプラグインをインストール
@@ -59,7 +58,7 @@ var sass = require('gulp-sass');
 
 // 'sass'っていうタスクを宣言し、処理を記述
 gulp.task('sass', function() {
-	gulp.src(['./src/style.scss')    // 対象とするファイルを指定
+	gulp.src(['./src/style.scss'])    // 対象とするファイルを指定
 		.pipe(sass())                // sassをcssにコンパイルする処理
 		.pipe(gulp.dest('./public')) // 処理後のファイルを吐き出す場所を指定
 });
@@ -89,6 +88,9 @@ gulp sass
 
 そうすると、プロジェクトフォルダの中身が、こうなってるはずー
 ```
+/node_modules
+gulpfile.js
+package.json
 /project
   ┣ /src
   ┣  ┣ style.scss
@@ -121,6 +123,9 @@ gulp copy
 
 こうなってればok！
 ```
+/node_modules
+gulpfile.js
+package.json
 /project
   ┣ /src
   ┣  ┣ style.scss
@@ -129,3 +134,16 @@ gulp copy
      ┣ style.css
      ┗ index.html
 ```
+
+## index.htmlを編集してstyle.cssを反映させよう
+```
+<link rel="stylesheet" href="style.css">
+```
+をindex.htmlに追記するだけですね。
+ここで注意したいのが、  
+編集・追加・削除等すべての作業をsrcフォルダ以下で行うこと。public以下は触らないようにする。
+
+## 各タスクをwatch（＝変更監視）しよう
+## src, publicそれぞれの対象ファイルの指定を変更
+## ブラウザ自動リロードと、ローカルサーバの立ち上げをしよう
+## 同期処理
