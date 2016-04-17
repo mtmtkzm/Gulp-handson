@@ -112,7 +112,7 @@ sassタスクにオプションを追加していつもの見た目にしてみ�
 これがGulpオリジナルの機能なので、プラグインのインストールは不要。
 ```js
 gulp.task('copy', function() {
-	gulp.src(./src/index.html).pipe(gulp.dest(./public));
+	gulp.src('./src/index.html').pipe(gulp.dest('./public'));
 });
 ```
 
